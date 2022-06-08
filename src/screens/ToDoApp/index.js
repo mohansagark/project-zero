@@ -36,8 +36,7 @@ const ToDo = ({ todoList, updateList, resetList }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-1"></div>
-        <div className="col-md-8">
+        <div className="col-md-10">
           <form className="mt-5">
             <div className="form-group mt-5">
               <input
@@ -58,54 +57,14 @@ const ToDo = ({ todoList, updateList, resetList }) => {
             Submit
           </button>
         </div>
+        <div className="col-md-2"> </div>
       </div>
       <div className="row">
-        <div className="col-md-1"></div>
         <div className="col-md-8">
           <h1>Todo List</h1>
-          {todoList.length > 0 &&
-            todoList.map((item, index) => {
-              return (
-                <div key={String(index)} className="row">
-                  <div className="col-md-10">
-                    <span
-                      style={{
-                        textDecoration:
-                          item.status && !edit ? "line-through" : "none",
-                      }}
-                      className="todo-list"
-                    >
-                      {item.title}
-                    </span>
-                  </div>
-                  {edit && (
-                    <div className="col-md-2">
-                      <input
-                        type="checkbox"
-                        className="checkbox-btn"
-                        checked={item.status}
-                        onChange={() => handleToggleComplete(item.id)}
-                      />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
         </div>
-
-        {todoList.length > 0 && (
+        {edit ? (
           <div className="col-md-2">
-            <button
-              type="submit"
-              className="btn btn-default btn-md edit-btn"
-              onClick={() => setEdit(!edit)}
-            >
-              {edit ? "Save" : "Edit"}
-            </button>
-          </div>
-        )}
-        {edit && (
-          <div className="col-md-1">
             <button
               type="submit"
               className="btn btn-danger btn-md edit-btn"
@@ -117,7 +76,51 @@ const ToDo = ({ todoList, updateList, resetList }) => {
               Reset
             </button>
           </div>
+        ) : (
+          <div className="col-md-2" />
         )}
+        {todoList.length > 0 && (
+          <div className="col-md-2">
+            <button
+              type="submit"
+              className="btn btn-default btn-md edit-btn"
+              onClick={() => setEdit(!edit)}
+            >
+              {edit ? "Save" : "Edit"}
+            </button>
+          </div>
+        )}
+      </div>
+
+      <div className="row">
+        {todoList.length > 0 &&
+          todoList.map((item, index) => {
+            return (
+              <div key={String(index)}>
+                <div className="col-md-10">
+                  <span
+                    style={{
+                      textDecoration:
+                        item.status && !edit ? "line-through" : "none",
+                    }}
+                    className="todo-list"
+                  >
+                    {item.title}
+                  </span>
+                </div>
+                {edit && (
+                  <div className="col-md-2">
+                    <input
+                      type="checkbox"
+                      className="checkbox-btn"
+                      checked={item.status}
+                      onChange={() => handleToggleComplete(item.id)}
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
       </div>
     </div>
   );
