@@ -34,7 +34,7 @@ const ToDo = ({ todoList, updateList, resetList }) => {
   };
 
   return (
-    <div className="container">
+    <div className="fluid-container">
       <div className="row">
         <div className="col-md-10">
           <form className="mt-5">
