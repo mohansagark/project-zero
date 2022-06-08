@@ -1,10 +1,14 @@
-import { SET_TODO_LIST, GET_TODO_LIST } from "../actions/types";
+import {
+  SET_TODO_LIST,
+  GET_TODO_LIST,
+  RESET_TODO_LIST,
+} from "../actions/types";
 
 const initialState = {
   list: [],
 };
 
-const todoReducer = (state = initialState, action) => {
+const todo = (state = initialState, action) => {
   switch (action.type) {
     case SET_TODO_LIST:
       return {
@@ -15,9 +19,15 @@ const todoReducer = (state = initialState, action) => {
     case GET_TODO_LIST:
       return state.list;
 
+    case RESET_TODO_LIST:
+      return {
+        ...state,
+        list: [],
+      };
+
     default:
       return state;
   }
 };
 
-export default todoReducer;
+export default todo;

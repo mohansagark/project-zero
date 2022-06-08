@@ -4,6 +4,7 @@ import cryptoJs from "crypto-js";
 import { persistStore, persistReducer, createTransform } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import rootReducer from "../store/reducers";
+import whitelist from "./whitelistedReducers.json";
 
 const middleware = [thunk];
 
@@ -35,19 +36,18 @@ const persistConfig = {
   key: "root",
   storage,
   transforms: [encryptor],
-  whitelist: ["loginReducer"],
+  whitelist: whitelist,
 };
 
 const initialState = {};
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-// const store = createStore(
-//   persistedReducer,
-//   initialState,
-//   applyMiddleware(...middleware)
-// );
-const store = createStore(rootReducer);
+const store = createStore(
+  persistedReducer,
+  initialState,
+  applyMiddleware(...middleware)
+);
 const persistor = persistStore(store);
 
 export { store, persistor };

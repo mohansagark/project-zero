@@ -1,4 +1,4 @@
-import { SET_TODO_LIST, GET_TODO_LIST } from "./types";
+import { SET_TODO_LIST, GET_TODO_LIST, RESET_TODO_LIST } from "./types";
 
 export const getTodoList = () => {
   return {
@@ -6,8 +6,15 @@ export const getTodoList = () => {
   };
 };
 
-export const setTodoList = () => {
+export const setTodoList = (payload) => {
   return {
     type: SET_TODO_LIST,
+    payload,
+  };
+};
+
+export const resetTodoList = () => {
+  return {
+    type: RESET_TODO_LIST,
   };
 };
