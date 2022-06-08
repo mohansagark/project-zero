@@ -1,0 +1,25 @@
+.container {
+    background-color: aliceblue;
+    height: 570px;
+    padding: 60px 20px;
+}
+
+.todo-list{
+    font-size:25px;
+    /* display: flex; */
+    justify-content: space-around;
+}
+
+.edit-btn{
+    width:90%;
+    margin-top:5%;
+}
+.submit-button{
+    width:90%;
+}
+.checkbox-btn{
+        width: 20px;
+        height: 20px;
+        float: right;
+        border-radius: 50%;
+}
