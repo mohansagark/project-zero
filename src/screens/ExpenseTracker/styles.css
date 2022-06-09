@@ -1,7 +1,6 @@
 .fluid-container {
     background-color: aliceblue;
-    height: 570px;
-    /* padding: 60px 20px; */
+    height: 575px;
 }
 h1{
     margin-top:10px !important;
@@ -25,4 +24,11 @@ h1{
         height: 20px;
         float: right;
         border-radius: 50%;
+}
+
+.title{
+    margin-bottom:40px;
+}
+.view-anchorTag{
+    float: right;
 }
