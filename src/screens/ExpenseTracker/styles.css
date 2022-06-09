@@ -1,7 +1,7 @@
-.container {
+.fluid-container {
     background-color: aliceblue;
     height: 570px;
-    padding: 60px 20px;
+    /* padding: 60px 20px; */
 }
 
 .todo-list{
@@ -13,7 +13,7 @@
     width:100%;
     margin-top:5%;
 }
-.submit-button{
+.btn-submit{
     width:100%;
 }
 .checkbox-btn{
