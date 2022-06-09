@@ -32,3 +32,14 @@ h1{
 .view-anchorTag{
     float: right;
 }
+.expense-submit{
+    width:100%;
+    margin-bottom:10px;
+}
+.date{
+    margin-bottom: 30px;
+}
+.alignCenter{
+    display: flex;
+    align-items: center;
+}
