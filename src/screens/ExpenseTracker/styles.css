@@ -3,15 +3,19 @@
     height: 570px;
     /* padding: 60px 20px; */
 }
-
+h1{
+    margin-top:10px !important;
+}
 .todo-list{
     font-size:25px;
     justify-content: space-around;
 }
 
 .edit-btn{
-    width:100%;
-    margin-top:5%;
+    width: 100%;
+}
+.reset-btn{
+    width: 100%;
 }
 .btn-submit{
     width:100%;
