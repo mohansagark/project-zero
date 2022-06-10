@@ -36,7 +36,8 @@ const ToDo = ({ todoList, updateList, resetList }) => {
   return (
     <div className="fluid-container">
       <div className="row">
-        <div className="col-md-10">
+        <div className="col-md-1" />
+        <div className="col-md-9">
           <form className="mt-5">
             <div className="form-group mt-5">
               <input
@@ -48,7 +49,7 @@ const ToDo = ({ todoList, updateList, resetList }) => {
             </div>
           </form>
         </div>
-        <div className="col-md-2">
+        <div className="col-md-1">
           <button
             type="submit"
             className="btn btn-primary btn-md submit-button"
@@ -60,14 +61,15 @@ const ToDo = ({ todoList, updateList, resetList }) => {
         <div className="col-md-2"> </div>
       </div>
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-2" />
+        <div className="col-md-6">
           <h1>Todo List</h1>
         </div>
         {edit ? (
-          <div className="col-md-2">
+          <div className="col-md-1">
             <button
               type="submit"
-              className="btn btn-danger btn-md edit-btn"
+              className="btn btn-danger btn-md reset-btn"
               onClick={() => {
                 setEdit(false);
                 resetList();
@@ -77,10 +79,10 @@ const ToDo = ({ todoList, updateList, resetList }) => {
             </button>
           </div>
         ) : (
-          <div className="col-md-2" />
+          <div className="col-md-1" />
         )}
         {todoList.length > 0 && (
-          <div className="col-md-2">
+          <div className="col-md-1">
             <button
               type="submit"
               className="btn btn-default btn-md edit-btn"
@@ -91,8 +93,8 @@ const ToDo = ({ todoList, updateList, resetList }) => {
           </div>
         )}
       </div>
-
       <div className="row">
+<<<<<<< HEAD
         {todoList.length > 0 &&
           todoList.map((item, index) => {
             return (
@@ -132,6 +134,40 @@ const ToDo = ({ todoList, updateList, resetList }) => {
               </div>
             );
           })}
+=======
+        <div className="col-md-2" />
+        <div className="col-md-8">
+          {todoList.length > 0 &&
+            todoList.map((item, index) => {
+              return (
+                <div key={String(index)}>
+                  <div className="col-md-11">
+                    <span
+                      style={{
+                        textDecoration:
+                          item.status && !edit ? "line-through" : "none",
+                      }}
+                      className="todo-list"
+                    >
+                      {item.title}
+                    </span>
+                  </div>
+                  {edit && (
+                    <div className="col-md-1">
+                      <input
+                        type="checkbox"
+                        className="checkbox-btn"
+                        checked={item.status}
+                        onChange={() => handleToggleComplete(item.id)}
+                      />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+        </div>
+        <div className="col-md-2" />
+>>>>>>> 8c7bf0926be5f1d138beb6cf31a0323f89373b41
       </div>
     </div>
   );

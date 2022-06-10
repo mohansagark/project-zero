@@ -1,19 +1,22 @@
-.container {
+.fluid-container {
     background-color: aliceblue;
-    height: 570px;
-    padding: 60px 20px;
+    height: 575px;
 }
-
+h1{
+    margin-top:10px !important;
+}
 .todo-list{
     font-size:25px;
     justify-content: space-around;
 }
 
 .edit-btn{
-    width:100%;
-    margin-top:5%;
+    width: 100%;
 }
-.submit-button{
+.reset-btn{
+    width: 100%;
+}
+.btn-submit{
     width:100%;
 }
 .checkbox-btn{
@@ -21,4 +24,31 @@
         height: 20px;
         float: right;
         border-radius: 50%;
+}
+
+.title{
+    margin-bottom:40px;
+}
+.view-anchorTag{
+    float: right;
+}
+.expense-submit{
+    width:100%;
+    margin-bottom:10px;
+}
+.date{
+    margin-bottom: 30px;
+}
+.alignCenter{
+    display: flex;
+    align-items: center;
+}
+table{
+    cursor: pointer;
+}
+thead{
+    background-color:aliceblue;
+}
+.dispalyTotal{
+    background-color: aliceblue;
 }
