@@ -21,11 +21,11 @@ const ExpenseTracker = (props) => {
       setName(e);
     }
   };
-  const handleAmount = (e) => {
-    if (validateCurrency(e)) {
-      setAmount(e);
-    }
-  };
+  // const handleAmount = (e) => {
+  //   if (validateCurrency(e)) {
+  //     setAmount(e);
+  //   }
+  // };
   const {} = props;
   return (
     <div className="fluid-container">
