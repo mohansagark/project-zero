@@ -1,5 +1,11 @@
+import { FaPencilAlt } from "react-icons/fa";
+
 function Table(props) {
   const { headers, data, displayTotal, editable } = props;
+
+  const editTable = (row) => {
+  console.log("row", row.expenseName);
+  }
   return (
     <div className="table-responsive">
       <table className="table table-hover">
@@ -9,6 +15,7 @@ function Table(props) {
             {headers.map((header, index) => {
               return <th key={String(index)}>{header.value}</th>;
             })}
+            {editable && <th />}
           </tr>
         </thead>
         <tbody>
@@ -28,7 +35,12 @@ function Table(props) {
                     </td>
                   );
                 })}
-                {editable && <td>Edit</td>}
+
+                {editable && (
+                  <td>
+                    <FaPencilAlt onClick={() => editTable(rowData)} />
+                  </td>
+                )}
               </tr>
             );
           })}
@@ -37,8 +49,8 @@ function Table(props) {
               <td />
               <td />
               <td />
-              <td>Total</td>
-              <td>20000</td>
+              <td className="dispalyTotal">Total</td>
+              <td className="dispalyTotal">20000</td>
               <td />
             </tr>
           )}
