@@ -11,9 +11,10 @@ function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/todoApp">ToDo App</Link> |{" "}
-        <Link to="/about">About</Link> | {" "}
-        <Link to="expenseTracker">Expense Tracker</Link>
+        <Link to="todoApp">ToDo App</Link> |{" "}
+        <Link to="expenseTracker">Expense Tracker</Link> |{" "}
+        <Link to="passwordGenerator">Password Generator</Link> |{" "}
+        <Link to="about">About</Link>
       </nav>
     </div>
   );
