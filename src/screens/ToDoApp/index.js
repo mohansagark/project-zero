@@ -97,7 +97,7 @@ const ToDo = ({ todoList, updateList, resetList }) => {
           todoList.map((item, index) => {
             return (
               <div key={String(index)}>
-                <div className="col-md-10">
+                <div className="col-md-8">
                   <span
                     style={{
                       textDecoration:
@@ -116,6 +116,17 @@ const ToDo = ({ todoList, updateList, resetList }) => {
                       checked={item.status}
                       onChange={() => handleToggleComplete(item.id)}
                     />
+                  </div>
+                )}
+                {edit && (
+                  <div className="col-md-2">
+                    <button
+                      type="submit"
+                      className="btn btn-default btn-md edit-btn"
+                      onClick={() => setEdit(!edit)}
+                    >
+                      {edit ? "Save" : "Edit"}
+                    </button>
                   </div>
                 )}
               </div>
