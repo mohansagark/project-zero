@@ -1,10 +1,11 @@
 import { FaPencilAlt } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function Table(props) {
   const { headers, data, displayTotal, editable } = props;
 
   const editTable = (row) => {
-  console.log("row", row.expenseName);
+  toast.info(row.expenseName??"Name unavailable")
   }
   return (
     <div className="table-responsive">

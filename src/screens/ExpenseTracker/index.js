@@ -10,9 +10,28 @@ const ExpenseTracker = (props) => {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(null);
   const [date, setDate] = useState("");
+  const [category, setCategory] = useState("");
+  const options = [
+    {
+      label: "Daily Products",
+      value: "dailyProducts",
+    },
+    {
+      label: "Power Bill",
+      value: "powerBill",
+    },
+    {
+      label: "Groceries",
+      value: "groceries",
+    },
+    {
+      label: "House Rent",
+      value: "houseRent",
+    },
+  ];
 
   const notify = () => {
-    if (name && amount && date) {
+    if (name && amount && date && category) {
       toast.success("X is added to the Expense List!");
     }
   };
@@ -35,7 +54,7 @@ const ExpenseTracker = (props) => {
         <div className="col-md-8">
           <div className="row alignCenter">
             <div className="col-md-2" />
-            <div className="col-md-2 form-group ">
+            <div className="col-md-2 form-group">
               <label>Expense Name</label>
             </div>
             <div className="col-md-5 form-group">
@@ -63,6 +82,31 @@ const ExpenseTracker = (props) => {
                 value={amount}
                 onChange={(e) => validateCurrency(e.target.value)}
               />
+            </div>
+            <div className="col-md-3" />
+          </div>
+
+          <div className="row alignCenter">
+            <div className="col-md-2" />
+            <div className="col-md-2 form-group">
+              <label>Category</label>
+            </div>
+            <div className="col-md-5 ">
+              <select
+                className="form-control form-select form-select-lg mb-3 form-group"
+                onChange={(e) => {
+                  setCategory(e.target.value);
+                }}
+              >
+                <option value={""} disabled className="options">
+                  Choose category
+                </option>
+                {options.map((option) => (
+                  <option value={option.value} className="options">
+                    {option.label}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="col-md-3" />
           </div>
