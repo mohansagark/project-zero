@@ -4,9 +4,9 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
-import { validateAlphabets, validateCurrency } from "../../helpers/general";
+import { validateAlphabets } from "../../helpers/general";
 
-const ExpenseTracker = (props) => {
+const ExpenseTracker = () => {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState(null);
   const [date, setDate] = useState("");
@@ -45,7 +45,6 @@ const ExpenseTracker = (props) => {
   //     setAmount(e);
   //   }
   // };
-  const {} = props;
   return (
     <div className="fluid-container">
       <h1 className="text-center title">Expense Tracker</h1>
@@ -80,7 +79,7 @@ const ExpenseTracker = (props) => {
                 className="form-control"
                 placeholder="Expense Cost"
                 value={amount}
-                onChange={(e) => validateCurrency(e.target.value)}
+                onChange={(e) => setAmount(e.target.value)}
               />
             </div>
             <div className="col-md-3" />
