@@ -1,0 +1,22 @@
+.back-navigation {
+  background-color: midnightblue;
+  .back-navigation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h3 {
+      color: white;
+      margin-bottom: 20px;
+    }
+    svg {
+      fill: white;
+    }
+    .profile-icon {
+      margin-right: 40px;
+    }
+  }
+  .back-icon {
+    color: white;
+    margin-left: 40px;
+  }
+}

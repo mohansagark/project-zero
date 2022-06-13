@@ -43,12 +43,7 @@ h1{
     display: flex;
     align-items: center;
 }
-table{
-    cursor: pointer;
-}
-thead{
-    background-color:aliceblue;
-}
-.dispalyTotal{
-    background-color: aliceblue;
+.viewExpense-title{
+    margin-bottom: 40px;
+    color:MidnightBlue;
 }
