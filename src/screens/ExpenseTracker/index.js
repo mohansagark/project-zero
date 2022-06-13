@@ -5,10 +5,12 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import { validateAlphabets } from "../../helpers/general";
+import { setExpenseList } from "../../store/actions/expense.actions";
 
-const ExpenseTracker = () => {
+const ExpenseTracker = (props) => {
+  const { addExpense } = props;
   const [name, setName] = useState("");
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
   const [category, setCategory] = useState("");
   const options = [
@@ -30,9 +32,24 @@ const ExpenseTracker = () => {
     },
   ];
 
+  const clearForm = () => {
+    setAmount("");
+    setCategory("");
+    setDate("");
+    setName("");
+  };
+
   const notify = () => {
     if (name && amount && date && category) {
-      toast.success("X is added to the Expense List!");
+      toast.success(`${name} is added to the Expense List!`);
+      clearForm();
+      const payload = {
+        expenseName: name,
+        category: category,
+        expenseDate: date,
+        expenseAmount: amount,
+      };
+      addExpense(payload);
     }
   };
   const handleName = (e) => {
@@ -100,8 +117,12 @@ const ExpenseTracker = () => {
                 <option value={""} disabled className="options">
                   Choose category
                 </option>
-                {options.map((option) => (
-                  <option value={option.value} className="options">
+                {options.map((option, index) => (
+                  <option
+                    value={option.value}
+                    key={String(index)}
+                    className="options"
+                  >
                     {option.label}
                   </option>
                 ))}
@@ -168,6 +189,10 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  addExpense: (payload) => {
+    dispatch(setExpenseList(payload));
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExpenseTracker);
