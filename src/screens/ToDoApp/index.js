@@ -2,7 +2,7 @@ import "./style.scss";
 import { useState } from "react";
 import { resetTodoList, setTodoList } from "../../store/actions/todo.actions";
 import { connect } from "react-redux";
-import BackNavigation from "../BackNavigation";
+import BackNavigation from "../../components/BackNavigation";
 
 const ToDo = ({ todoList, updateList, resetList }) => {
   const [task, setTask] = useState("");

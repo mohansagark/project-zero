@@ -1,6 +1,6 @@
 import { FaPencilAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
-import "../styles.css";
+import "./styles.css";
 
 function Table(props) {
   const { headers, data, displayTotal, editable } = props;
