@@ -4,6 +4,7 @@ import CheckBox from "../../components/Checkbox";
 import { useRef, useState } from "react";
 import Button from "../../components/Button";
 import { toast } from "react-toastify";
+import BackNavigation from "../../components/BackNavigation";
 
 const PasswordGenerator = ({ availableRules }) => {
   const [selectedRules, setSelectedRules] = useState([]);
@@ -50,7 +51,7 @@ const PasswordGenerator = ({ availableRules }) => {
 
   return (
     <div className="fluid-container passwordGeneratorContainer">
-      <h1 className="text-center title">Password Generator</h1>
+      <BackNavigation title={"Password Generator"} />
       <div className="row justify-content-center">
         <div className="col-md-1" />
         <div className="col-md-4 card" ref={cardRef}>
