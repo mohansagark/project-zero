@@ -1,16 +1,16 @@
 import {
-  SET_TODO_LIST,
-  GET_TODO_LIST,
-  RESET_TODO_LIST,
+  GET_EXPENSE_LIST,
+  RESET_EXPENSE_LIST,
+  SET_EXPENSE_LIST,
 } from "../actions/types";
 
 const initialState = {
   list: [],
 };
 
-const todo = (state = initialState, action) => {
+const expense = (state = initialState, action) => {
   switch (action.type) {
-    case SET_TODO_LIST:
+    case SET_EXPENSE_LIST:
       let temp = [...state.list];
       temp.push(action.payload);
       return {
@@ -18,18 +18,15 @@ const todo = (state = initialState, action) => {
         list: temp,
       };
 
-    case GET_TODO_LIST:
+    case GET_EXPENSE_LIST:
       return state.list;
 
-    case RESET_TODO_LIST:
-      return {
-        ...state,
-        list: [],
-      };
+    case RESET_EXPENSE_LIST:
+      return { ...state, list: [] };
 
     default:
-      return state;
+     return state;
   }
 };
 
-export default todo;
+export default expense;

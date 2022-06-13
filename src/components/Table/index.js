@@ -1,5 +1,6 @@
 import { FaPencilAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
+import "../styles.css";
 
 function Table(props) {
   const { headers, data, displayTotal, editable } = props;
@@ -9,7 +10,7 @@ function Table(props) {
   };
   return (
     <div className="table-responsive">
-      <table className="table table-hover">
+      <table className="table table-hover" id="table-data">
         <thead>
           <tr>
             <th>#</th>
@@ -29,7 +30,7 @@ function Table(props) {
                   return (
                     <td key={String(cell)}>
                       {rowData[headers[index].label] ?? (
-                        <span style={{ fontWeight: "bold", color: "red" }}>
+                        <span style={{ fontWeight: "bold", color: "black" }}>
                           NA
                         </span>
                       )}
@@ -39,7 +40,7 @@ function Table(props) {
 
                 {editable && (
                   <td>
-                    <FaPencilAlt onClick={() => editTable(rowData)} />
+                    <FaPencilAlt onClick={() => editTable(rowData)}  className="edit-icon" />
                   </td>
                 )}
               </tr>
