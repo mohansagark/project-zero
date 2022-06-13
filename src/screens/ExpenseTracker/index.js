@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import { validateAlphabets } from "../../helpers/general";
 import { setExpenseList } from "../../store/actions/expense.actions";
-import BackNavigation from "../BackNavigation";
+import BackNavigation from "../../components/BackNavigation";
 
 const ExpenseTracker = (props) => {
   const { addExpense } = props;
@@ -173,9 +173,7 @@ const ExpenseTracker = (props) => {
           <div className="row">
             <div className="col-md-7"></div>
             <div className="col-md-2 view-anchorTag">
-              <a href="viewExpenses">
-                View Expense
-              </a>
+              <a href="viewExpenses">View Expense</a>
             </div>
             <div className="col-md-3"></div>
           </div>
