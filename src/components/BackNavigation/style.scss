@@ -13,10 +13,16 @@
     }
     .profile-icon {
       margin-right: 40px;
+      display: flex;
+      justify-content: flex-end;
+      cursor: pointer;
+      padding-right: 0 !important;
     }
-  }
-  .back-icon {
-    color: white;
-    margin-left: 40px;
+    .back-icon {
+      color: white;
+      margin-left: 40px;
+      cursor: pointer;
+      padding-left: 0 !important;
+    }
   }
 }

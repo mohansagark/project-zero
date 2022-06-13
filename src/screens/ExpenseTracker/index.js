@@ -1,4 +1,4 @@
-import "./styles.css";
+import "./styles.scss";
 import { connect } from "react-redux";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import { validateAlphabets } from "../../helpers/general";
 import { setExpenseList } from "../../store/actions/expense.actions";
+import BackNavigation from "../BackNavigation";
 
 const ExpenseTracker = (props) => {
   const { addExpense } = props;
@@ -63,9 +64,9 @@ const ExpenseTracker = (props) => {
   //   }
   // };
   return (
-    <div className="fluid-container">
-      <h1 className="text-center title">Expense Tracker</h1>
-      <div className="row">
+    <div className="fluid-container expense-container">
+      <BackNavigation title={"Expense Tracker"} />
+      <div className="row expense-tracker">
         <div className="col-md-2"></div>
         <div className="col-md-8">
           <div className="row alignCenter">
@@ -171,8 +172,8 @@ const ExpenseTracker = (props) => {
 
           <div className="row">
             <div className="col-md-7"></div>
-            <div className="col-md-2">
-              <a href="viewExpenses" className="view-anchorTag">
+            <div className="col-md-2 view-anchorTag">
+              <a href="viewExpenses">
                 View Expense
               </a>
             </div>

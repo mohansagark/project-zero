@@ -1,0 +1,28 @@
+.todo-container {
+  background-color: aliceblue;
+  height: 570px;
+  .todo-list {
+    font-size: 25px;
+    justify-content: space-around;
+  }
+
+  .edit-btn {
+    width: 100%;
+    margin-top: 5%;
+  }
+  .submit-button {
+    width: 100%;
+  }
+  .checkbox-btn {
+    width: 20px;
+    height: 20px;
+    float: right;
+    border-radius: 50%;
+  }
+  .todo {
+    margin-top: 20px;
+  }
+  .row {
+    margin-right: 0;
+  }
+}
