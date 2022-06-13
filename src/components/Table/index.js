@@ -5,8 +5,8 @@ function Table(props) {
   const { headers, data, displayTotal, editable } = props;
 
   const editTable = (row) => {
-  toast.info(row.expenseName??"Name unavailable")
-  }
+    toast.info(row.expenseName ?? "Name unavailable");
+  };
   return (
     <div className="table-responsive">
       <table className="table table-hover">

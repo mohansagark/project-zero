@@ -1,8 +1,47 @@
 .passwordGeneratorContainer {
+  height: 100vh;
   h1 {
     margin-top: 10px !important;
   }
+  .justify-content-center{
+    justify-content: center;
+    display: flex;
+    margin-top: 10vh;
+  }
   .title {
     margin-bottom: 40px;
+  }
+  .form-group {
+    label {
+      color: #635666;
+      font-size: larger;
+    }
+    input {
+      text-align: right;
+    }
+  }
+  .checkBoxContainer {
+    padding-bottom: 20px;
+    span {
+      color: #635666;
+    }
+  }
+  .buttonContainer {
+    margin-top: 20px;
+  }
+  .card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 45px 20px;
+    overflow-y: scroll;
+  }
+  .view-password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 2em;
+      word-break: break-all;
+      text-align: center;
+    }
   }
 }
