@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import BackNavigation from "../../components/BackNavigation";
 
 function ViewExpenses(props) {
-  const { expenseList } = props;
-  console.log(expenseList, "expense List");
+  const { expenseList, total } = props;
   const headers = [
     {
       label: "category",
@@ -33,6 +32,7 @@ function ViewExpenses(props) {
           data={expenseList}
           editable={true}
           displayTotal={true}
+          total={total}
         />
       </div>
     </div>
@@ -41,6 +41,7 @@ function ViewExpenses(props) {
 const mapStateToProps = (state) => {
   return {
     expenseList: state.expense.list,
+    total: state.expense.total,
   };
 };
 
