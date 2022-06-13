@@ -14,4 +14,9 @@ code {
 
 .fluid-container {
   background-color: aliceblue;
+  height: 100vh;
+}
+.disabled {
+  cursor: default;
+  opacity: 0.5;
 }
