@@ -1,5 +1,6 @@
 import Table from "../../components/Table/index";
 import { connect } from "react-redux";
+import BackNavigation from "../../components/BackNavigation";
 
 function ViewExpenses(props) {
   const { expenseList } = props;
@@ -24,14 +25,16 @@ function ViewExpenses(props) {
   ];
 
   return (
-    <div className="container">
-      <h1 className="text-center viewExpense-title">View Expenses</h1>
-      <Table
-        headers={headers}
-        data={expenseList}
-        editable={true}
-        displayTotal={true}
-      />
+    <div className="fluid-container expense-container">
+      <BackNavigation title={"View Expenses"} navigateTo={"/expenseTracker"} />
+      <div className="view-expense-list">
+        <Table
+          headers={headers}
+          data={expenseList}
+          editable={true}
+          displayTotal={true}
+        />
+      </div>
     </div>
   );
 }
