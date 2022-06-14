@@ -3,6 +3,8 @@ import { useState } from "react";
 import { resetTodoList, setTodoList } from "../../store/actions/todo.actions";
 import { connect } from "react-redux";
 import BackNavigation from "../../components/BackNavigation";
+import { Row, Col, Container, Button } from "react-bootstrap";
+import { BiFastForward } from "react-icons/bi";
 
 const ToDo = ({ todoList, updateList, resetList }) => {
   const [task, setTask] = useState("");
@@ -34,11 +36,11 @@ const ToDo = ({ todoList, updateList, resetList }) => {
   };
 
   return (
-    <div className="fluid-container todo-container">
+    <Container fluid className="fluid-container todo-container">
       <BackNavigation title={"ToDo App"} />
-      <div className="row todo">
-        <div className="col-md-1" />
-        <div className="col-md-9">
+      <Row className="todo">
+        <Col lg={2} />
+        <Col lg={8}>
           <form className="mt-5">
             <div className="form-group mt-5">
               <input
@@ -49,86 +51,85 @@ const ToDo = ({ todoList, updateList, resetList }) => {
               />
             </div>
           </form>
-        </div>
-        <div className="col-md-1">
-          <button
-            type="submit"
-            className="btn btn-primary btn-md submit-button"
+        </Col>
+        <Col lg={1}>
+          <Button
+            variant="primary"
+            className="btn btn-primary btn-lg submit-button mt-5"
             onClick={() => addValue()}
           >
             Submit
-          </button>
-        </div>
-        <div className="col-md-2"> </div>
-      </div>
-      <div className="row">
-        <div className="col-md-2" />
-        <div className="col-md-6">
-          <h1>Todo List</h1>
-        </div>
+          </Button>
+        </Col>
+        
+      </Row>
+      <Row>
+        <Col lg={2} />
+        <Col lg={6}>
+          <h1 className="todo-title">Todo List</h1>
+        </Col>
         {edit ? (
-          <div className="col-md-1">
-            <button
-              type="submit"
-              className="btn btn-danger btn-md reset-btn"
+          <Col lg={1}>
+            <Button
+              variant="danger"
+              className="btn btn-danger btn-md edit-btn"
               onClick={() => {
                 setEdit(false);
                 resetList();
               }}
             >
               Reset
-            </button>
-          </div>
+            </Button>
+          </Col>
         ) : (
-          <div className="col-md-1" />
+          <Col lg={1} />
         )}
         {todoList.length > 0 && (
-          <div className="col-md-1">
-            <button
-              type="submit"
+          <Col lg={1}>
+            <Button
+              variant="secondary"
               className="btn btn-default btn-md edit-btn"
               onClick={() => setEdit(!edit)}
             >
               {edit ? "Save" : "Edit"}
-            </button>
-          </div>
+            </Button>
+          </Col>
         )}
-      </div>
-      <div className="row">
-        <div className="col-md-2" />
-        <div className="col-md-8">
+      </Row>
+      <Row className="items-list">
+        <Col lg={2} />
+        <Col lg={8}>
           {todoList.length > 0 &&
             todoList.map((item, index) => {
               return (
                 <div key={String(index)}>
-                  <div className="col-md-11">
+                  <Col lg={11} className="todo-list">
+                    <BiFastForward size={18} />
                     <span
                       style={{
                         textDecoration:
                           item.status && !edit ? "line-through" : "none",
                       }}
-                      className="todo-list"
                     >
                       {item.title}
                     </span>
-                  </div>
+                  </Col>
                   {edit && (
-                    <div className="col-md-1">
+                    <Col lg={1} className="checkbox-btn">
                       <input
                         type="checkbox"
-                        className="checkbox-btn"
                         checked={item.status}
                         onChange={() => handleToggleComplete(item.id)}
                       />
-                    </div>
+                    </Col>
                   )}
                 </div>
               );
             })}
-        </div>
-        <div className="col-md-2" />
-      </div>
-    </div>
+        </Col>
+        <Col lg={2} />
+      </Row>
+    </Container>
   );
 };
 

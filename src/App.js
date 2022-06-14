@@ -1,31 +1,44 @@
-import "./App.css";
-import { Link } from "react-router-dom";
+import "./App.scss";
+import { Container, Card, Row, Col } from "react-bootstrap";
+import menuItems from "./constants/menuItems.json";
+import { useNavigate } from "react-router-dom";
+import { IoMdPerson } from "react-icons/io";
+import { MdLogout } from "react-icons/md";
 
 function App() {
+  let navigate = useNavigate();
   return (
-    <div className="container-fluid nav">
-      <div className="row margin">
-        <div className="col-md-3 links">
+    <Container fluid className="project-zero-container">
+      <Row className="nav">
+        <Col className="links">
           <span className="project-title">Project Zero</span>
-        </div>
-        <div className="col-md-8 links">
-          <Link to="todoApp" className="text-white">
-            ToDo App
-          </Link>{" "}
-          <Link to="expenseTracker" className="text-white">
-            Expense Tracker
-          </Link>{" "}
-          <Link to="passwordGenerator" className="text-white">
-            Password Generator
-          </Link>{" "}
-          <Link to="about">About</Link>
-        </div>
-        {/* <div className="col-md-2"></div>
-        <div className="col-md-2"></div>
-        <div className="col-md-2"></div> */}
-        <div className="col-md-1"></div>
-      </div>
-    </div>
+        </Col>
+
+        <Col xs={1} className="profile-icon">
+          <IoMdPerson size={30} />
+        </Col>
+
+        <Col xs={1} className="logout-icon">
+          <MdLogout size={30} />
+        </Col>
+      </Row>
+      <Row className="menu-tiles-container">
+        {menuItems.map((item) => {
+          return (
+            <Card
+              key={item.id}
+              onClick={() => {
+                item.active && navigate(item.navigation);
+              }}
+            >
+              <Card.Body>
+                <Card.Title>{item.title}</Card.Title>
+              </Card.Body>
+            </Card>
+          );
+        })}
+      </Row>
+    </Container>
   );
 }
 
