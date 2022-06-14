@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
-import { validateAlphabets } from "../../helpers/general";
+import { capitalize, validateAlphabets, validateNumber } from "../../helpers/general";
 import { setExpenseList } from "../../store/actions/expense.actions";
 import BackNavigation from "../../components/BackNavigation";
 
@@ -45,7 +45,7 @@ const ExpenseTracker = (props) => {
       toast.success(`${name} is added to the Expense List!`);
       clearForm();
       const payload = {
-        expenseName: name,
+        expenseName: capitalize(name),
         category: category,
         expenseDate: date,
         expenseAmount: amount,
@@ -58,11 +58,13 @@ const ExpenseTracker = (props) => {
       setName(e);
     }
   };
-  // const handleAmount = (e) => {
-  //   if (validateCurrency(e)) {
-  //     setAmount(e);
-  //   }
-  // };
+
+  const handleAmount = (e) => {
+    if (validateNumber(e)) {
+      setAmount(e);
+    }
+  };
+
   return (
     <div className="fluid-container expense-container">
       <BackNavigation title={"Expense Tracker"} />
@@ -97,7 +99,7 @@ const ExpenseTracker = (props) => {
                 className="form-control"
                 placeholder="Expense Cost"
                 value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                onChange={(e) => handleAmount(e.target.value)}
               />
             </div>
             <div className="col-md-3" />

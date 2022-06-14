@@ -16,3 +16,12 @@ export const validateCurrency = (string) => {
     );
   }
 };
+
+export const validateNumber = (string) => {
+  const regex = /\D/;
+  return !regex.test(string);
+};
+
+export const capitalize = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};

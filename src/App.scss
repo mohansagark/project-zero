@@ -1,0 +1,85 @@
+.project-zero-container {
+  overflow: hidden;
+  .nav {
+    background-image: linear-gradient(to bottom right, #000428, #004e92);
+    height: 15vh;
+  }
+  .menu-tiles-container {
+    margin-right: 10vw;
+    margin-left: 10vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+    .card {
+      background-image: linear-gradient(to bottom right, #ff512f, #dd2476);
+      width: 18rem;
+      height: 20vh;
+      cursor: pointer;
+      .card-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .card-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+          color: white;
+        }
+      }
+    }
+  }
+  .profile-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      fill: #dd2476;
+    }
+  }
+  .logout-icon {
+        display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    padding-right: 40px !important;
+    svg {
+      fill: #dd2476;
+    }
+  }
+  .links {
+    display: flex;
+    padding-left: 15vw;
+    color: white;
+    align-items: center;
+  }
+  a {
+    color: white !important;
+    text-decoration: none !important;
+  }
+  .project-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: red;
+    background: -webkit-linear-gradient(#ff512f, #dd2476);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* Media queries for mobile */
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .links {
+      align-items: center;
+      font-size: 11px;
+      margin-left: 13px;
+    }
+    .project-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
