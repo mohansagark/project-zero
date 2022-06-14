@@ -6,6 +6,7 @@ import {
 
 const initialState = {
   list: [],
+  total : 0
 };
 
 const expense = (state = initialState, action) => {
@@ -13,16 +14,18 @@ const expense = (state = initialState, action) => {
     case SET_EXPENSE_LIST:
       let temp = [...state.list];
       temp.push(action.payload);
+      let totalTemp = parseInt(state.total) + parseInt(action.payload.expenseAmount);
       return {
         ...state,
         list: temp,
+        total: totalTemp,
       };
 
     case GET_EXPENSE_LIST:
       return state.list;
 
     case RESET_EXPENSE_LIST:
-      return { ...state, list: [] };
+      return { ...state, list: [], total:0 };
 
     default:
      return state;

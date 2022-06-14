@@ -8,6 +8,7 @@ import Router from "./routes";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { ToastContainer } from "react-toastify";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
