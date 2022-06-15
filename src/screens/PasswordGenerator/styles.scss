@@ -1,12 +1,13 @@
 .passwordGeneratorContainer {
+  background-color: aliceblue;
   height: 100vh;
   h1 {
     margin-top: 10px !important;
   }
-  .justify-content-center{
-    justify-content: center;
+  .cards-content {
+    justify-content: space-between;
     display: flex;
-    margin-top: 10vh;
+    margin-top: 15vh;
   }
   .title {
     margin-bottom: 40px;
@@ -28,20 +29,43 @@
   }
   .buttonContainer {
     margin-top: 20px;
+    span{
+      font-size: 12px;
+    }
   }
   .card {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 45px 20px;
     overflow-y: scroll;
+    .buttonContainer {
+      background-image: linear-gradient(to bottom right, #000428, #004e92);
+    }
   }
   .view-password {
     display: flex;
     justify-content: center;
     align-items: center;
-    span {
+    .password {
+      flex:7;
       font-size: 2em;
       word-break: break-all;
       text-align: center;
+      align-items: center;
+    }
+    .buttons {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .buttonContainer {
+        width: 10vw;
+        span {
+          text-align: center;
+          font-weight: bold;
+          color: #fff;
+          font-size: 12px;
+        }
+      }
     }
   }
 }

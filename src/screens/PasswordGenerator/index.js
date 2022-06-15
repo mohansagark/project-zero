@@ -5,6 +5,8 @@ import { useRef, useState } from "react";
 import Button from "../../components/Button";
 import { toast } from "react-toastify";
 import BackNavigation from "../../components/BackNavigation";
+import { Col, Container, Row } from "react-bootstrap";
+import { copyToClipBoard } from "../../helpers/general";
 
 const PasswordGenerator = ({ availableRules }) => {
   const [selectedRules, setSelectedRules] = useState([]);
@@ -50,19 +52,17 @@ const PasswordGenerator = ({ availableRules }) => {
   };
 
   return (
-    <div className="fluid-container passwordGeneratorContainer">
+    <Container fluid className="passwordGeneratorContainer">
       <BackNavigation title={"Password Generator"} />
-      <div className="row justify-content-center">
-        <div className="col-md-1" />
-        <div className="col-md-4 card" ref={cardRef}>
-          <div className="row">
-            <div className="col-md-2" />
-            <div className="col-md-8">
-              <div className="row alignCenter">
-                <div className="col-md-9 form-group">
+      <Row className="cards-content">
+        <Col xs={4} className="card" ref={cardRef}>
+          <Row className="row">
+            <Col>
+              <Row className="alignCenter">
+                <Col className="form-group">
                   <label>Password Length</label>
-                </div>
-                <div className="col-md-3 form-group">
+                </Col>
+                <Col className="form-group">
                   <input
                     type="text"
                     className="form-control"
@@ -70,8 +70,8 @@ const PasswordGenerator = ({ availableRules }) => {
                     onChange={(e) => setPasswordLength(e.target.value)}
                     maxLength={2}
                   />
-                </div>
-              </div>
+                </Col>
+              </Row>
               {availableRules.map((rule, index) => {
                 return (
                   <CheckBox
@@ -89,20 +89,25 @@ const PasswordGenerator = ({ availableRules }) => {
                 title="Generate Password"
                 clickMethod={generatePassword}
               />
-            </div>
-            <div className="col-md-2" />
-          </div>
-        </div>
-        <div className="col-md-2" />
-        <div
-          className="col-md-4 card view-password"
+            </Col>
+          </Row>
+        </Col>
+        <Col
+          xs={4}
+          className="card view-password"
           style={{ height: cardRef.current?.clientHeight }}
         >
-          <span>{password}</span>
-        </div>
-        <div className="col-md-1" />
-      </div>
-    </div>
+          <Row className="password">{password}</Row>
+          <Row className="buttons">
+            <Button
+              title="Copy to clipboard"
+              clickMethod={() => copyToClipBoard(password, "Password")}
+            />
+            <Button title="Save Password" clickMethod={() => {}} />
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

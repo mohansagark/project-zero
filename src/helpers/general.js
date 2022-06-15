@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const validateAlphabets = (string) => {
   const regex = /^[a-zA-Z\s]*$/;
   return regex.test(string);
@@ -24,4 +26,13 @@ export const validateNumber = (string) => {
 
 export const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+export const copyToClipBoard = async (copyMe, messageType) => {
+  try {
+    await navigator.clipboard.writeText(copyMe);
+    toast.success(`${messageType} copied`);
+  } catch (err) {
+    toast.error("Unable to copy, please try again...!");
+  }
 };
