@@ -2,6 +2,7 @@ import {
   SET_TODO_LIST,
   GET_TODO_LIST,
   RESET_TODO_LIST,
+  UPDATE_TODO_ITEM,
 } from "../actions/types";
 
 const initialState = {
@@ -16,6 +17,22 @@ const todo = (state = initialState, action) => {
       return {
         ...state,
         list: temp,
+      };
+
+    case UPDATE_TODO_ITEM:
+      const newList = state.list.map((item) => {
+        if (item.id === action.payload) {
+          const updatedItem = {
+            ...item,
+            status: !item.status,
+          };
+          return updatedItem;
+        }
+        return item;
+      });
+      return {
+        ...state,
+        list: newList,
       };
 
     case GET_TODO_LIST:

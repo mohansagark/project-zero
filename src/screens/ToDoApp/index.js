@@ -1,12 +1,17 @@
 import "./style.scss";
 import { useState } from "react";
-import { resetTodoList, setTodoList } from "../../store/actions/todo.actions";
+import {
+  resetTodoList,
+  setTodoList,
+  updateToDoItemStatus,
+} from "../../store/actions/todo.actions";
 import { connect } from "react-redux";
 import BackNavigation from "../../components/BackNavigation";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import { BiFastForward } from "react-icons/bi";
+import CheckBox from "../../components/Checkbox";
 
-const ToDo = ({ todoList, updateList, resetList }) => {
+const ToDo = ({ todoList, updateList, resetList, updateStatus }) => {
   const [task, setTask] = useState("");
   const [edit, setEdit] = useState(false);
 
@@ -17,22 +22,6 @@ const ToDo = ({ todoList, updateList, resetList }) => {
       updateList(temp);
       setTask("");
     }
-  };
-
-  const handleToggleComplete = (id) => {
-    const newList = todoList.map((item) => {
-      if (item.id === id) {
-        const updatedItem = {
-          ...item,
-          status: !item.status,
-        };
-
-        return updatedItem;
-      }
-
-      return item;
-    });
-    updateList(newList);
   };
 
   return (
@@ -115,10 +104,10 @@ const ToDo = ({ todoList, updateList, resetList }) => {
                   </Col>
                   {edit && (
                     <Col lg={1} className="checkbox-btn">
-                      <input
-                        type="checkbox"
+                      <CheckBox
+                        title={""}
+                        onCheck={() => updateStatus(item.id)}
                         checked={item.status}
-                        onChange={() => handleToggleComplete(item.id)}
                       />
                     </Col>
                   )}
@@ -141,6 +130,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   updateList: (payload) => dispatch(setTodoList(payload)),
+  updateStatus: (payload) => dispatch(updateToDoItemStatus(payload)),
   resetList: () => dispatch(resetTodoList()),
 });
 
