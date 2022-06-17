@@ -34,7 +34,7 @@ const ToDo = ({ todoList, updateList, resetList, updateStatus }) => {
             <div className="form-group mt-5">
               <input
                 type="text"
-                className="form-control"
+                className="form-control input-value"
                 value={task}
                 onChange={(e) => setTask(e.target.value)}
               />
