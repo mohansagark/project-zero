@@ -7,17 +7,21 @@ import { toast } from "react-toastify";
 import BackNavigation from "../../components/BackNavigation";
 import { Col, Container, Row } from "react-bootstrap";
 import { copyToClipBoard } from "../../helpers/general";
-import { ConditionalModal, CustomModal, InformationModal } from "../../components/Modal";
+import { CustomModal } from "../../components/Modal";
+import savePasswordForm from "./savePasswordForm";
 
 const PasswordGenerator = ({ availableRules }) => {
   const [selectedRules, setSelectedRules] = useState([]);
   const [password, setPassword] = useState("");
   const [passwordLength, setPasswordLength] = useState("");
+  const [website, setWebsite] = useState("");
+  const [username, setUsername] = useState("");
 
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    setShow(false);
+  };
   const handleShow = () => {
-    console.log("show model...");
     setShow(true);
   };
 
@@ -60,9 +64,7 @@ const PasswordGenerator = ({ availableRules }) => {
     }
   };
 
-  const savePasswordForm = () => {
-    return <div>Hello</div>;
-  };
+  const savePassword = () => {};
 
   return (
     <Container fluid className="passwordGeneratorContainer">
@@ -117,16 +119,25 @@ const PasswordGenerator = ({ availableRules }) => {
               clickMethod={() => copyToClipBoard(password, "Password")}
             />
             <Button title="Save Password" clickMethod={() => handleShow()} />
-            <ConditionalModal
-              show={show}
-              handleClose={handleClose}
-              innerCompoenent={savePasswordForm}
-              headerTitle={'Infomation'}
-
-            />
           </Row>
         </Col>
       </Row>
+      <CustomModal
+        className={"savePasswordModal"}
+        show={show}
+        handleClose={handleClose}
+        innerComponent={() =>
+          savePasswordForm(
+            username,
+            setUsername,
+            website,
+            setWebsite,
+            password,
+            savePassword
+          )
+        }
+        headerTitle={"Save Password"}
+      />
     </Container>
   );
 };
