@@ -15,7 +15,7 @@
     height: 80vh;
     .card {
       background-image: linear-gradient(to bottom right, #ff512f, #dd2476);
-      width: 18rem;
+      width: 20vh;
       height: 20vh;
       cursor: pointer;
       .card-body {
@@ -43,7 +43,7 @@
     }
   }
   .logout-icon {
-        display: flex;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
     cursor: pointer;
@@ -80,6 +80,23 @@
     .project-title {
       font-size: 20px;
       font-weight: bold;
+    }
+  }
+}
+
+.phone {
+  .project-zero-container {
+    .menu-tiles-container {
+      justify-content: space-evenly;
+      margin-right: 5vw;
+      margin-left: 5vw;
+      padding-top: 40px;
+      overflow: scroll;
+      scroll .card {
+        margin-bottom: 40px;
+        width: 10vh;
+        height: 10vh;
+      }
     }
   }
 }
