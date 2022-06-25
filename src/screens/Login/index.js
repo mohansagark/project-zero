@@ -1,15 +1,23 @@
 import "./styles.scss";
 import { connect } from "react-redux";
 import { Col, Container, Row } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { googleClientId } from "../../config/config";
 import jwtDecode from "jwt-decode";
+import { setUserInfo } from "../../store/actions/login.actions";
 
 const Login = (props) => {
-  const handleCallbackResponse = (response) => {
-    var userObject = jwtDecode(response.credential);
-    console.log(userObject, "google user");
-  };
+  const { userInfo, setUserData } = props;
+
+  const handleCallbackResponse = useCallback(
+    (response) => {
+      var userObject = jwtDecode(response.credential);
+      setUserData(userObject);
+      document.getElementById("signInDiv").hidden = true;
+    },
+    [setUserData]
+  );
+
   useEffect(() => {
     /* global google */
     google.accounts.id.initialize({
@@ -23,8 +31,11 @@ const Login = (props) => {
       size: "large",
     });
 
-    google.accounts.id.prompt();
-  }, []);
+    // google.accounts.id.prompt();
+  }, [handleCallbackResponse]);
+
+  console.log(userInfo);
+
   return (
     <Container fluid className="loginContainer">
       <Row>
@@ -37,9 +48,15 @@ const Login = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    userInfo: state.login.userInfo,
+  };
 };
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => ({
+  setUserData: (userData) => {
+    dispatch(setUserInfo(userData));
+  },
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
