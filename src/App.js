@@ -4,9 +4,17 @@ import menuItems from "./constants/menuItems.json";
 import { useNavigate } from "react-router-dom";
 import { IoMdPerson } from "react-icons/io";
 import { MdLogout } from "react-icons/md";
+import { connect } from "react-redux";
+import { resetUserInfo } from "./store/actions/login.actions";
+import { useState } from "react";
+import { ConditionalModal } from "./components/Modal";
 
-function App() {
+function App({ onLogout }) {
   let navigate = useNavigate();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const logout = () => {
+    onLogout();
+  };
   return (
     <Container fluid className="project-zero-container">
       <Row className="nav">
@@ -18,7 +26,13 @@ function App() {
           <IoMdPerson size={30} />
         </Col>
 
-        <Col xs={1} className="logout-icon">
+        <Col
+          xs={1}
+          className="logout-icon"
+          onClick={() => {
+            setShowLogoutModal(true);
+          }}
+        >
           <MdLogout size={30} />
         </Col>
       </Row>
@@ -38,8 +52,25 @@ function App() {
           );
         })}
       </Row>
+      <ConditionalModal
+        show={showLogoutModal}
+        handleClose={() => setShowLogoutModal(false)}
+        headerBody={"Are you sure you want to logout?"}
+        headerTitle={"Confirm Logout"}
+        yesText={"Okay"}
+        noText={"Cancel"}
+        handleYes={() => {
+          logout();
+        }}
+      />
     </Container>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({
+  onLogout: () => {
+    dispatch(resetUserInfo());
+  },
+});
+
+export default connect(null, mapDispatchToProps)(App);
