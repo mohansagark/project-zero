@@ -1,24 +1,51 @@
 import { Routes, Route } from "react-router-dom";
-import App from "./App";
-import Todo from "./screens/ToDoApp";
-import About from "./screens/About";
-import ExpenseTracker from "./screens/ExpenseTracker";
-import ViewExpenses from "./screens/ExpenseTracker/viewExpenses";
-import PasswordGenerator from "./screens/PasswordGenerator";
-import Login from "./screens/Login";
-import PrivacyPolicy from "./screens/PrivacyPolicy";
+import ProtectedRoute from "./components/Routes/protectedRoute";
+import LoginRoute from "./components/Routes/loginRoute";
+import PublicRoute from "./components/Routes/publicRoute";
+import {
+  loginRoutes,
+  protectedRoutes,
+  publicRoutes,
+} from "./constants/routeNavigators";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="login" element={<Login />} />
-      <Route path="/" element={<App />} />
-      <Route path="todoApp" element={<Todo />} />
-      <Route path="about" element={<About />} />
-      <Route path="passwordGenerator" element={<PasswordGenerator />} />
-      <Route path="expenseTracker" element={<ExpenseTracker />} />
-      <Route path="viewExpenses" element={<ViewExpenses />} />
-      <Route path="privacyPolicy" element={<PrivacyPolicy />} />
+      <Route element={<LoginRoute />}>
+        {loginRoutes.map((route, index) => {
+          return (
+            <Route
+              path={route.path}
+              element={route.element}
+              key={String(index)}
+            />
+          );
+        })}
+      </Route>
+
+      <Route element={<ProtectedRoute />}>
+        {protectedRoutes.map((route, index) => {
+          return (
+            <Route
+              path={route.path}
+              element={route.element}
+              key={String(index)}
+            />
+          );
+        })}
+      </Route>
+
+      <Route element={<PublicRoute />}>
+        {publicRoutes.map((route, index) => {
+          return (
+            <Route
+              path={route.path}
+              element={route.element}
+              key={String(index)}
+            />
+          );
+        })}
+      </Route>
     </Routes>
   );
 };

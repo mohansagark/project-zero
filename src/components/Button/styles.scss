@@ -1,4 +1,4 @@
-.buttonContainer {
+.primaryButton {
   width: 100%;
   height: 2vw;
   cursor: pointer;
@@ -11,5 +11,21 @@
     text-align: center;
     font-weight: bold;
     color: #fff;
+  }
+}
+.secondaryButton {
+  width: 100%;
+  height: 2vw;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.25vw;
+  border: solid 1px #000428;
+  background-color: transparent;
+  span {
+    text-align: center;
+    font-weight: bold;
+    color: #000428;
   }
 }

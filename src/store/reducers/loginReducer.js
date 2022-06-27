@@ -8,6 +8,7 @@ import {
 const initialState = {
   userInfo: {},
   googleInfo: {},
+  isLoggedIn: false,
 };
 
 const login = (state = initialState, action) => {
@@ -19,6 +20,7 @@ const login = (state = initialState, action) => {
         : {};
       return {
         ...state,
+        isLoggedIn: true,
         userInfo: temp,
         googleInfo: googleData,
       };
@@ -28,6 +30,7 @@ const login = (state = initialState, action) => {
     case RESET_USER_INFO:
       return {
         ...state,
+        isLoggedIn: false,
         userInfo: {},
         googleInfo: {},
       };
