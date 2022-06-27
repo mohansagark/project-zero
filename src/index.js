@@ -5,6 +5,7 @@ import { store, persistor } from "./config/store";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./routes";
+// import RouteConfig from "./config/route";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { ToastContainer } from "react-toastify";
