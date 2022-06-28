@@ -7,6 +7,7 @@ import moment from "moment";
 import { capitalize, validateAlphabets, validateNumber } from "../../helpers/general";
 import { setExpenseList } from "../../store/actions/expense.actions";
 import BackNavigation from "../../components/BackNavigation";
+import { Row, Col, Container, Button } from "react-bootstrap";
 
 const ExpenseTracker = (props) => {
   const { addExpense } = props;
@@ -30,6 +31,10 @@ const ExpenseTracker = (props) => {
     {
       label: "House Rent",
       value: "houseRent",
+    },
+    {
+      label: "Others",
+      value: "others",
     },
   ];
 
@@ -66,17 +71,17 @@ const ExpenseTracker = (props) => {
   };
 
   return (
-    <div className="fluid-container expense-container">
+    <Container fluid className="expense-container">
       <BackNavigation title={"Expense Tracker"} />
-      <div className="row expense-tracker">
-        <div className="col-md-2"></div>
-        <div className="col-md-8">
-          <div className="row alignCenter">
-            <div className="col-md-2" />
-            <div className="col-md-2 form-group">
+      <Row className="expense-tracker">
+        <Col lg={2} md={2} />
+        <Col lg={8} md={8}>
+          <Row className="alignCenter">
+            <Col lg={2} md={1} />
+            <Col lg={2} md={3} className="form-group">
               <label>Expense Name</label>
-            </div>
-            <div className="col-md-5 form-group">
+            </Col>
+            <Col lg={5} md={7} className="form-group">
               <input
                 type="text"
                 className="form-control"
@@ -84,16 +89,16 @@ const ExpenseTracker = (props) => {
                 value={name}
                 onChange={(e) => handleName(e.target.value)}
               />
-            </div>
-            <div className="col-md-3" />
-          </div>
+            </Col>
+            <Col lg={3} md={1} />
+          </Row>
 
-          <div className="row alignCenter">
-            <div className="col-md-2" />
-            <div className="col-md-2 form-group">
+          <Row className="alignCenter">
+            <Col lg={2} md={1} />
+            <Col lg={2} md={3} className="form-group">
               <label>Expense Cost</label>
-            </div>
-            <div className="col-md-5 form-group">
+            </Col>
+            <Col lg={5} md={7} className="form-group">
               <input
                 type="text"
                 className="form-control"
@@ -101,16 +106,16 @@ const ExpenseTracker = (props) => {
                 value={amount}
                 onChange={(e) => handleAmount(e.target.value)}
               />
-            </div>
-            <div className="col-md-3" />
-          </div>
+            </Col>
+            <Col lg={3} md={1} />
+          </Row>
 
-          <div className="row alignCenter">
-            <div className="col-md-2" />
-            <div className="col-md-2 form-group">
+          <Row className="alignCenter">
+            <Col lg={2} md={1} />
+            <Col lg={2} md={3} className="form-group">
               <label>Category</label>
-            </div>
-            <div className="col-md-5 ">
+            </Col>
+            <Col lg={5} md={7}>
               <select
                 className="form-control form-select form-select-lg mb-3 form-group"
                 onChange={(e) => {
@@ -130,16 +135,16 @@ const ExpenseTracker = (props) => {
                   </option>
                 ))}
               </select>
-            </div>
-            <div className="col-md-3" />
-          </div>
+            </Col>
+            <Col lg={3} md={1} />
+          </Row>
 
-          <div className="row alignCenter">
-            <div className="col-md-2" />
-            <div className="col-md-2 form-group">
+          <Row className="alignCenter">
+            <Col lg={2} md={1} />
+            <Col lg={2} md={3} className="form-group">
               <label>Expense Date</label>
-            </div>
-            <div className="col-md-5 form-group date">
+            </Col>
+            <Col lg={5} md={7} className="form-group date">
               <input
                 type="date"
                 className="form-control"
@@ -147,42 +152,42 @@ const ExpenseTracker = (props) => {
                 max={moment().format("yyyy-MM-DD")}
                 onChange={(e) => setDate(e.target.value)}
               />
-            </div>
-            <div className="col-md-3" />
-          </div>
+            </Col>
+            <Col lg={3} md={1} />
+          </Row>
 
-          <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-5">
-              <div className="row">
-                <div className="col-md-4" />
-                <div className="col-md-4">
-                  <button
+          <Row>
+            <Col lg={4} md={5} />
+            <Col lg={5} md={4}>
+              <Row>
+                <Col lg={4} md={4} />
+                <Col lg={4} md={7}>
+                  <Button
                     type="submit"
                     className="btn btn-md btn-primary expense-submit"
                     onClick={notify}
                   >
                     Submit
-                  </button>
-                </div>
+                  </Button>
+                </Col>
 
-                <div className="col-md-4" />
-              </div>
-              <div className="col-md-3" />
-            </div>
-          </div>
+                <Col lg={4} md={1} />
+              </Row>
+              <Col lg={3} md={3} />
+            </Col>
+          </Row>
 
-          <div className="row">
-            <div className="col-md-7"></div>
-            <div className="col-md-2 view-anchorTag">
+          <Row>
+            <Col lg={7} md={9} />
+            <Col lg={2} md={2} className="view-anchorTag">
               <a href="viewExpenses">View Expense</a>
-            </div>
-            <div className="col-md-3"></div>
-          </div>
-        </div>
-        <div className="col-md-3"></div>
-      </div>
-    </div>
+            </Col>
+            <Col lg={3} md={1} />
+          </Row>
+        </Col>
+        <Col lg={3} md={3} />
+      </Row>
+    </Container>
   );
 };
 

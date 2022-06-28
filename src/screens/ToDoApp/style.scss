@@ -21,7 +21,7 @@
   .todo-title {
     color: midnightblue;
   }
-  .input-value{
+  .input-value {
     font-size: 14px;
   }
   .edit-btn {
@@ -48,5 +48,29 @@
   }
   .row {
     margin-right: 0;
+  }
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .todo-container {
+    .back-navigation .back-icon {
+      padding-left:20px !important;
+    }
+  }
+  .back-navigation .profile-icon {
+    padding-right:10px !important;
+  }
+}
+
+// Ipad
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .todo-container {
+    .back-navigation .profile-icon {
+      padding-right: 65px !important;
+    }
+    .todo-container .back-navigation .back-icon {
+      padding-left: 5px !important;
+    }
   }
 }

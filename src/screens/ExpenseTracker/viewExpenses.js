@@ -1,6 +1,7 @@
 import Table from "../../components/Table/index";
 import { connect } from "react-redux";
 import BackNavigation from "../../components/BackNavigation";
+import { Row, Col, Container } from "react-bootstrap";
 
 function ViewExpenses(props) {
   const { expenseList, total } = props;
@@ -24,18 +25,22 @@ function ViewExpenses(props) {
   ];
 
   return (
-    <div className="fluid-container expense-container">
+    <Container fluid className="expense-container">
       <BackNavigation title={"View Expenses"} navigateTo={"/expenseTracker"} />
-      <div className="view-expense-list">
-        <Table
-          headers={headers}
-          data={expenseList}
-          editable={true}
-          displayTotal={true}
-          total={total}
-        />
-      </div>
-    </div>
+      <Row>
+        <Col xs={12} sm={12} lg={12} md={12}>
+          <div className="view-expense-list">
+            <Table
+              headers={headers}
+              data={expenseList}
+              editable={true}
+              displayTotal={true}
+              total={total}
+            />
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 const mapStateToProps = (state) => {

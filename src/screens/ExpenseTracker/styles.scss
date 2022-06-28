@@ -41,6 +41,7 @@
   .expense-submit {
     width: 100%;
     margin-bottom: 10px;
+    background-image: linear-gradient(to bottom right, #000428, #004e92);
   }
   .date {
     margin-bottom: 30px;
@@ -56,4 +57,17 @@
   .view-expense-list {
     margin: 40px;
   }
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .expense-container {
+    .back-navigation h3 {
+      font-size: 9.7px;
+    }
+  }
+}
+
+// Ipad
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
 }

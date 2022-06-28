@@ -1,17 +1,20 @@
 import { FaPencilAlt } from "react-icons/fa";
 import { toast } from "react-toastify";
+import { Container } from "react-bootstrap";
+import Table from "react-bootstrap/Table";
+
 import "./styles.scss";
 
-function Table(props) {
+function TableComponent(props) {
   const { headers, data, displayTotal, editable, total } = props;
 
   const editTable = (row) => {
     toast.info(row.expenseName ?? "Name unavailable");
   };
   return (
-    <div className="table-responsive custom-table-container">
+    <Container className="custom-table-container">
       {data.length > 0 ? (
-        <table className="table table-hover" id="table-data">
+        <Table hover responsive="sm" id="table-data">
           <thead>
             <tr>
               <th>#</th>
@@ -61,17 +64,17 @@ function Table(props) {
               </tr>
             )}
           </tbody>
-        </table>
+        </Table>
       ) : (
         <div className="noData">No Data Available</div>
       )}
-    </div>
+    </Container>
   );
 }
 
-Table.defaultProps = {
+TableComponent.defaultProps = {
   data: [],
   headers: [],
 };
 
-export default Table;
+export default TableComponent;

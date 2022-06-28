@@ -10,15 +10,15 @@ function App() {
   return (
     <Container fluid className="project-zero-container">
       <Row className="nav">
-        <Col className="links">
+        <Col xs={9} sm={9} md={9} className="links">
           <span className="project-title">Project Zero</span>
         </Col>
 
-        <Col xs={1} className="profile-icon">
+        <Col xs={2} sm={2} md={2} className="profile-icon">
           <IoMdPerson size={30} />
         </Col>
 
-        <Col xs={1} className="logout-icon">
+        <Col xs={1} sm={1} md={1} className="logout-icon">
           <MdLogout size={30} />
         </Col>
       </Row>
