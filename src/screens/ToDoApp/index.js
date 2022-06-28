@@ -46,7 +46,6 @@ const ToDo = ({ todoList, updateList, resetList, updateStatus }) => {
     if (task) {
       e.preventDefault();
       addValue();
-      console.log("Task added.");
       // if (handleValidation()) {
       toast.success("Form submitted");
       // } else {

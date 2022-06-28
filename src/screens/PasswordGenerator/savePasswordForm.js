@@ -51,7 +51,6 @@ const SavePasswordForm = (
         username: username,
         password: password,
       };
-      console.log(data);
       savePassword(data);
     }
   };

@@ -7,7 +7,7 @@ import jwtDecode from "jwt-decode";
 import { setUserInfo } from "../../store/actions/login.actions";
 
 const Login = (props) => {
-  const { userInfo, setUserData } = props;
+  const { setUserData } = props;
 
   const handleCallbackResponse = useCallback(
     (response) => {
@@ -33,8 +33,6 @@ const Login = (props) => {
 
     // google.accounts.id.prompt();
   }, [handleCallbackResponse]);
-
-  console.log(userInfo);
 
   return (
     <Container fluid className="loginContainer">
