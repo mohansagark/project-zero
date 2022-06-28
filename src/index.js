@@ -5,6 +5,7 @@ import { store, persistor } from "./config/store";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import Router from "./routes";
+// import RouteConfig from "./config/route";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { ToastContainer } from "react-toastify";
@@ -18,17 +19,7 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Router />
-          <ToastContainer
-            position="top-right"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
+          <ToastContainer autoClose={5000} />
         </BrowserRouter>
       </PersistGate>
     </Provider>

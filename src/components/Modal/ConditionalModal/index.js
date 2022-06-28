@@ -1,9 +1,19 @@
-import { Modal } from "react-bootstrap";
+import { Modal, Row, Col } from "react-bootstrap";
 import Button from "../../Button";
+import "./styles.scss";
 
-const ConditionalModal = ({ handleClose, show, headerBody, headerTitle }) => {
+const ConditionalModal = ({
+  handleClose,
+  show,
+  headerBody,
+  headerTitle,
+  yesText,
+  noText,
+  handleYes,
+}) => {
   return (
     <Modal
+      className="conditional-modal"
       show={show}
       onHide={handleClose}
       animation={false}
@@ -16,11 +26,38 @@ const ConditionalModal = ({ handleClose, show, headerBody, headerTitle }) => {
       </Modal.Header>
       <Modal.Body>{headerBody}</Modal.Body>
       <Modal.Footer>
-        <Button title="Close" onClick={handleClose} />
-        <Button title="Save Changes" onClick={handleClose} />
+        <Row>
+          <Col xs={3}>
+            <Button
+              type={"primary"}
+              title={yesText}
+              clickMethod={() => {
+                handleYes();
+                handleClose();
+              }}
+            />
+          </Col>
+          <Col xs={3}>
+            <Button
+              type={"secondary"}
+              title={noText}
+              clickMethod={handleClose}
+            />
+          </Col>
+        </Row>
       </Modal.Footer>
     </Modal>
   );
+};
+
+ConditionalModal.defaultProps = {
+  handleClose: () => {},
+  show: false,
+  headerBody: "",
+  headerTitle: "",
+  yesText: "Yes",
+  noText: "No",
+  handleYes: () => {},
 };
 
 export default ConditionalModal;
