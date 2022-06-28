@@ -110,3 +110,20 @@
     }
   }
 }
+
+.phone {
+  .project-zero-container {
+    .menu-tiles-container {
+      justify-content: space-evenly;
+      margin-right: 5vw;
+      margin-left: 5vw;
+      padding-top: 40px;
+      overflow: scroll;
+      scroll .card {
+        margin-bottom: 40px;
+        width: 10vh;
+        height: 10vh;
+      }
+    }
+  }
+}
