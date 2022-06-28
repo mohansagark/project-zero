@@ -18,9 +18,10 @@ const login = (state = initialState, action) => {
       let googleData = action.payload.iss.includes("google")
         ? action.payload
         : {};
+        
       return {
         ...state,
-        isLoggedIn: true,
+        isLoggedIn: action?.payload?.email_verified ? true : false,
         userInfo: temp,
         googleInfo: googleData,
       };
