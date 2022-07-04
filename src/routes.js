@@ -23,6 +23,7 @@ const Router = () => {
         })}
       </Route>
 
+
       <Route element={<ProtectedRoute />}>
         {protectedRoutes.map((route, index) => {
           return (

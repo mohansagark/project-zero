@@ -1,12 +1,23 @@
 import { Col, Container, Row } from "react-bootstrap";
+import  img1 from './../../assets/img1.png';
+import img2 from "./../../assets/img2.svg";
+import img3 from "./../../assets/img3.svg";
+import img4 from "./../../assets/img4.svg";
+import img5 from "./../../assets/img5.svg";
+import img6 from "./../../assets/img6.png";
+import img7 from "./../../assets/img7.png";
+import img8 from "./../../assets/img8.png";
+import img9 from "./../../assets/img9.png";
+import img10 from "./../../assets/img10.png";
+import './style.scss';
+
 
 const PrivacyPolicy = () => {
   return (
-    <Container fluid>
+    <Container className="policy-container">
       <Row>
-        <Col>
+        <Col lg={6}>
           <h1>Privacy Policy for Job Zero</h1>
-
           <p>
             At Job Zero, accessible from https://www.jobzero.xyz/, one of our
             main priorities is the privacy of our visitors. This Privacy Policy
@@ -26,15 +37,36 @@ const PrivacyPolicy = () => {
             applicable to any information collected offline or via channels
             other than this website.
           </p>
+        </Col>
 
-          <h2>Consent</h2>
+        <Col lg={6}>
+          <img src={img1} alt="" className="policy-img" />
+        </Col>
+      </Row>
 
+      <Row>
+        <Col lg={6}>
+          <img src={img2} alt="" className="policy-img" />
+        </Col>
+
+        <Col lg={6}>
+          <h1>Consent</h1>
           <p>
             By using our website, you hereby consent to our Privacy Policy and
-            agree to its terms.
+            agree to its terms.Creating a Privacy Policy for your application or
+            website can take a lot of time. You could either spend tons of money
+            on hiring a lawyer, or you could simply use our service and get a
+            unique Privacy Policy fully custumized to your website.
           </p>
-
-          <h2>Information we collect</h2>
+          <p>
+            You can also generate your Privacy Policy for website templates
+            like: Wix Wordpress Shopify Squarespace And many more
+          </p>
+        </Col>
+      </Row>
+      <Row>
+        <Col lg={6}>
+          <h1>Information we collect</h1>
 
           <p>
             The personal information that you are asked to provide, and the
@@ -52,8 +84,18 @@ const PrivacyPolicy = () => {
             information, including items such as name, company name, address,
             email address, and telephone number.
           </p>
+        </Col>
+        <Col lg={6}>
+          <img src={img3} alt="" className="policy-img" />
+        </Col>
+      </Row>
 
-          <h2>How we use your information</h2>
+      <Row>
+        <Col lg={6}>
+          <img src={img4} alt="" className="policy-img" />
+        </Col>
+        <Col lg={6}>
+          <h1>How we use your information</h1>
 
           <p>
             We use the information we collect in various ways, including to:
@@ -73,8 +115,12 @@ const PrivacyPolicy = () => {
             <li>Send you emails</li>
             <li>Find and prevent fraud</li>
           </ul>
+        </Col>
+      </Row>
 
-          <h2>Log Files</h2>
+      <Row>
+        <Col lg={6}>
+          <h1>Log Files</h1>
 
           <p>
             Job Zero follows a standard procedure of using log files. These
@@ -88,8 +134,18 @@ const PrivacyPolicy = () => {
             the site, tracking users' movement on the website, and gathering
             demographic information.
           </p>
+        </Col>
+        <Col lg={6}>
+          <img src={img5} alt="" className="policy-img" />
+        </Col>
+      </Row>
 
-          <h2>Advertising Partners Privacy Policies</h2>
+      <Row>
+        <Col lg={6}>
+          <img src={img6} alt="" className="policy-img" />
+        </Col>
+        <Col lg={6}>
+          <h1>Advertising Partners Privacy Policies</h1>
 
           <p>
             You may consult this list to find the Privacy Policy for each of the
@@ -111,8 +167,11 @@ const PrivacyPolicy = () => {
             Note that Job Zero has no access to or control over these cookies
             that are used by third-party advertisers.
           </p>
-
-          <h2>Third Party Privacy Policies</h2>
+        </Col>
+      </Row>
+      <Row>
+        <Col lg={6}>
+          <h1>Third Party Privacy Policies</h1>
 
           <p>
             Job Zero's Privacy Policy does not apply to other advertisers or
@@ -128,8 +187,18 @@ const PrivacyPolicy = () => {
             with specific web browsers, it can be found at the browsers'
             respective websites.
           </p>
+        </Col>
+        <Col lg={6}>
+          <img src={img7} alt="" className="policy-img" />
+        </Col>
+      </Row>
 
-          <h2>CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
+      <Row>
+        <Col lg={6}>
+          <img src={img8} alt="" className="policy-img" />
+        </Col>
+        <Col lg={6}>
+          <h1>CCPA Privacy Rights (Do Not Sell My Personal Information)</h1>
 
           <p>
             Under the CCPA, among other rights, California consumers have the
@@ -152,8 +221,12 @@ const PrivacyPolicy = () => {
             If you make a request, we have one month to respond to you. If you
             would like to exercise any of these rights, please contact us.
           </p>
+        </Col>
+      </Row>
 
-          <h2>GDPR Data Protection Rights</h2>
+      <Row>
+        <Col lg={6}>
+          <h1>GDPR Data Protection Rights</h1>
 
           <p>
             We would like to make sure you are fully aware of all of your data
@@ -191,8 +264,18 @@ const PrivacyPolicy = () => {
             If you make a request, we have one month to respond to you. If you
             would like to exercise any of these rights, please contact us.
           </p>
+        </Col>
+        <Col lg={6}>
+          <img src={img9} alt="" className="policy-img" />
+        </Col>
+      </Row>
 
-          <h2>Children's Information</h2>
+      <Row>
+        <Col lg={6}>
+          <img src={img10} alt="" className="policy-img" />
+        </Col>
+        <Col lg={6}>
+          <h1>Children's Information</h1>
 
           <p>
             Another part of our priority is adding protection for children while

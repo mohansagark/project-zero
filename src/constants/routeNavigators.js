@@ -6,6 +6,9 @@ import Login from "../screens/Login";
 import PasswordGenerator from "../screens/PasswordGenerator";
 import PrivacyPolicy from "../screens/PrivacyPolicy";
 import ToDoApp from "../screens/ToDoApp";
+import ProfileComponent from "../screens/MyProfile";
+import SubscriptionsComponent from '../screens/Subscriptions';
+
 
 export const loginRoutes = [
   {
@@ -14,6 +17,8 @@ export const loginRoutes = [
     element: <Login />,
   },
 ];
+
+
 
 export const publicRoutes = [
   {
@@ -53,5 +58,15 @@ export const protectedRoutes = [
     name: "View Expenses",
     path: "/viewExpenses",
     element: <ViewExpenses />,
+  },
+  {
+    name: "Profile",
+    path: "/myProfile",
+    element: <ProfileComponent />,
+  },
+  {
+    name: "Subscriptions",
+    path: "/subscriptions",
+    element: <SubscriptionsComponent />,
   },
 ];
