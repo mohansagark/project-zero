@@ -8,6 +8,8 @@ import PrivacyPolicy from "../screens/PrivacyPolicy";
 import ToDoApp from "../screens/ToDoApp";
 import ProfileComponent from "../screens/MyProfile";
 import SubscriptionsComponent from '../screens/Subscriptions';
+import SignupComponent from '../screens/Signup';
+import ForgotPasswordComponent from '../screens/ForgotPassword';
 
 
 export const loginRoutes = [
@@ -25,6 +27,16 @@ export const publicRoutes = [
     name: "Privacy Policy",
     path: "/privacyPolicy",
     element: <PrivacyPolicy />,
+  },
+  {
+    name: "Signup",
+    path: "/signup",
+    element: <SignupComponent />,
+  },
+  {
+    name: "ForgotPassword",
+    path: "/forgotPassword",
+    element: <ForgotPasswordComponent />,
   },
 ];
 
@@ -69,4 +81,5 @@ export const protectedRoutes = [
     path: "/subscriptions",
     element: <SubscriptionsComponent />,
   },
+ 
 ];

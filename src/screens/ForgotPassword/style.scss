@@ -1,0 +1,73 @@
+.forgot-password-container {
+  overflow: hidden;
+  .divider-1 {
+    height: 220px;
+    background-color: midnightblue;
+    position: relative;
+  }
+  .forgotPs-label{
+    text-align: center!important;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: midnightblue;
+  }
+  .forgotPs-title {
+    color: white;
+    margin-left: 45px;
+    margin-top: 20px;
+  }
+  .forgotPs-form {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    background-color: white;
+    height: 380px;
+    width: 340px;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    border-radius: 5px;
+  }
+  .forgotPs-desc{
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+    margin-bottom: 25px;
+    width: 292px;
+    margin-left: 15px;
+  }
+  .form-control{
+    width: 80%;
+    margin-left: 32px;
+    margin-bottom: 25px;
+  }
+  .submit-btn{
+    width: 80%;
+    margin-left: 32px;
+    background-color: midnightblue;
+    color:white;
+    height: 30px;
+    border-radius: 3px;
+    border:1px solid midnightblue;
+  }
+   .back-to-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 15px;
+    color:black;
+  }
+  .back-to-login:hover {
+    text-decoration: underline !important;
+  }
+  .forgotPs-img{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    margin: 30px auto;
+  }
+}

@@ -9,14 +9,16 @@ import img7 from "./../../assets/img7.png";
 import img8 from "./../../assets/img8.png";
 import img9 from "./../../assets/img9.png";
 import img10 from "./../../assets/img10.png";
+import BackNavigation from "../../components/BackNavigation";
 import './style.scss';
 
 
 const PrivacyPolicy = () => {
   return (
-    <Container className="policy-container">
+    <Container fluid className="policy-container">
+      <BackNavigation />
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>Privacy Policy for Job Zero</h1>
           <p>
             At Job Zero, accessible from https://www.jobzero.xyz/, one of our
@@ -39,17 +41,17 @@ const PrivacyPolicy = () => {
           </p>
         </Col>
 
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img1} alt="" className="policy-img" />
         </Col>
       </Row>
 
       <Row>
-        <Col lg={6}>
-          <img src={img2} alt="" className="policy-img" />
+        <Col lg={6} className="policy-desc">
+          <img src={img9} alt="" className="policy-img" />
         </Col>
 
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>Consent</h1>
           <p>
             By using our website, you hereby consent to our Privacy Policy and
@@ -65,7 +67,7 @@ const PrivacyPolicy = () => {
         </Col>
       </Row>
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>Information we collect</h1>
 
           <p>
@@ -85,16 +87,16 @@ const PrivacyPolicy = () => {
             email address, and telephone number.
           </p>
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img3} alt="" className="policy-img" />
         </Col>
       </Row>
 
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img4} alt="" className="policy-img" />
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>How we use your information</h1>
 
           <p>
@@ -119,7 +121,7 @@ const PrivacyPolicy = () => {
       </Row>
 
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>Log Files</h1>
 
           <p>
@@ -135,16 +137,16 @@ const PrivacyPolicy = () => {
             demographic information.
           </p>
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img5} alt="" className="policy-img" />
         </Col>
       </Row>
 
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img6} alt="" className="policy-img" />
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>Advertising Partners Privacy Policies</h1>
 
           <p>
@@ -170,7 +172,7 @@ const PrivacyPolicy = () => {
         </Col>
       </Row>
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>Third Party Privacy Policies</h1>
 
           <p>
@@ -188,16 +190,16 @@ const PrivacyPolicy = () => {
             respective websites.
           </p>
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img7} alt="" className="policy-img" />
         </Col>
       </Row>
 
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img8} alt="" className="policy-img" />
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>CCPA Privacy Rights (Do Not Sell My Personal Information)</h1>
 
           <p>
@@ -225,7 +227,7 @@ const PrivacyPolicy = () => {
       </Row>
 
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>GDPR Data Protection Rights</h1>
 
           <p>
@@ -265,16 +267,16 @@ const PrivacyPolicy = () => {
             would like to exercise any of these rights, please contact us.
           </p>
         </Col>
-        <Col lg={6}>
-          <img src={img9} alt="" className="policy-img" />
+        <Col lg={6} className="policy-desc">
+          <img src={img2} alt="" className="policy-img" />
         </Col>
       </Row>
 
       <Row>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <img src={img10} alt="" className="policy-img" />
         </Col>
-        <Col lg={6}>
+        <Col lg={6} className="policy-desc">
           <h1>Children's Information</h1>
 
           <p>

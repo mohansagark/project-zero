@@ -1,6 +1,13 @@
-.loginContainer {
+.signUpContainer {
   overflow: hidden;
   background-image: linear-gradient(to right top, #fff);
+  .back-icon {
+    position: absolute;
+    top: 4%;
+    left: 2%;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
   .login-form-bg {
     margin: 4% 0;
     padding: 0 2% 2% 0;
@@ -17,11 +24,23 @@
     cursor: pointer;
   }
   .form-control {
-    width: 92%;
-    margin-left: 15px;
+    margin: 0 8% 0 15px;
   }
+  ::-webkit-input-placeholder {
+    color: rgba(midnightblue, 0.35);
+  }
+  ::-moz-placeholder {
+    color: rgba(midnightblue, 0.35);
+  }
+  :-ms-input-placeholder {
+    color: rgba(midnightblue, 0.35);
+  }
+  :-moz-placeholder {
+    color: rgba(midnightblue, 0.35);
+  }
+
   .text-center {
-    margin: 15px 12px;
+    margin: 13px 12px;
     color: midnightblue;
   }
   .form-label {
@@ -39,50 +58,25 @@
     );
     color: white !important;
     width: 50%;
-    margin: auto;
-    margin-top: 25px;
-    margin-left: 25%;
+    margin-top: 15px;
+    margin-left: 15px;
     height: 35px;
     border-radius: 5px;
     border: 1px solid #9269bc;
   }
-  .social-media-links {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
-  }
-  .facebook-btn {
-    width: 35px;
-    height: 35px;
-    border-radius: 18px;
-    background-color: #353698;
-    border: 1px solid #353698;
-    color: white;
-    font-size: 16px;
+  .back-to-login {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 15px;
   }
-  .twitter-btn {
-    width: 35px;
-    height: 35px;
-    border-radius: 18px;
-    background-color: #6ad3e1;
-    border: 1px solid #6ad3e1;
-    color: white;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .back-to-login:hover {
+    text-decoration: underline !important;
   }
-  .google-btn {
-    width: 35px;
-    height: 35px;
-    border-radius: 18px;
-    background-color: #982430;
-    border: 1px solid #982430;
-    color: white;
-    font-size: 16px;
+  .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,11 +85,5 @@
     text-align: center;
     color: #3f4554;
     margin-top: 30px;
-    label {
-      cursor: pointer;
-    }
-    label:hover {
-      text-decoration: underline !important;
-    }
   }
 }
