@@ -16,7 +16,6 @@ const ForgotPasswordComponent = () => {
       </Container>
       <Container fluid className="divider-2">
         <Row>
-          <Col lg={4}></Col>
           <Col lg={4} className="forgotPs-form">
             <img src={ForgotPassword} alt="forgot password"  className="forgotPs-img"/>
             <h1 className="forgotPs-label">Forgot Password</h1>
@@ -45,7 +44,6 @@ const ForgotPasswordComponent = () => {
               <Col lg={3}></Col>
             </Row>
           </Col>
-          <Col lg={4}></Col>
         </Row>
       </Container>
     </Container>
