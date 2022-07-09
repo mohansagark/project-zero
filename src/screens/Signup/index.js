@@ -2,7 +2,7 @@ import "./styles.scss";
 import { connect } from "react-redux";
 import { Col, Container, Row, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import SignUpTheme from "../../assets/sign-up-theme.svg";
+import SignUpTheme from "../../assets/sign-up-theme-2.webp";
 
 const SignUpComponent = (props) => {
   let navigate = useNavigate();
