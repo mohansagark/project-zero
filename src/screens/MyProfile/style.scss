@@ -12,3 +12,40 @@
     margin: 30px 0px;
   }
 }
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+.profile-container {
+  .back-nav-media-queires {
+    height: 17vh;
+  }
+   .profile-img {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+  }
+  .data-media-queries{
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+}
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+.profile-container {
+  .back-nav-media-queires {
+    height: 17vh !important;
+  }
+  .profile-img {
+    width: 100%;
+  }
+}
+}

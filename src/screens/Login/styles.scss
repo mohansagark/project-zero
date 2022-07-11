@@ -1,4 +1,4 @@
-.loginContainer {
+.login-container {
   overflow: hidden;
   background-image: linear-gradient(to right top, #fff);
   .login-form-bg {
@@ -96,6 +96,39 @@
     }
     label:hover {
       text-decoration: underline !important;
+    }
+  }
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .login-container {
+    img {
+      margin-top: 0;
+      margin-bottom: 100px;
+    }
+    // .forgot-password {
+    //   width: 140px;
+    // }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .login-container {
+    .form-control {
+      width: 80%;
+      margin-left: 35px;
+    }
+    .form-label {
+      margin-left: 35px;
+    }
+    .forgot-password {
+      margin-right: 0px;
+    }
+    .responsive-sm {
+      display: flex;
+      align-items: flex-end;
+      justify-content: end;
     }
   }
 }

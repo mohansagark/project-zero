@@ -9,16 +9,20 @@ const ForgotPasswordComponent = () => {
     <Container fluid className="forgot-password-container">
       <Container fluid className="divider-1">
         <Row>
-          <Col lg={12}>
+          <Col lg={12} md={12} sm={12} xs={12}>
             <h1 className="forgotPs-title">Project Zero</h1>
           </Col>
         </Row>
       </Container>
       <Container fluid className="divider-2">
         <Row>
-          <Col lg={4}></Col>
-          <Col lg={4} className="forgotPs-form">
-            <img src={ForgotPassword} alt="forgot password"  className="forgotPs-img"/>
+          <Col lg={4} md={4} sm={4} xs={4}></Col>
+          <Col lg={4} md={4} sm={4} xs={4} className="forgotPs-form">
+            <img
+              src={ForgotPassword}
+              alt="forgot password"
+              className="forgotPs-img"
+            />
             <h1 className="forgotPs-label">Forgot Password</h1>
             <Form.Text className="forgotPs-desc">
               Enter your email and we'll send you a link to reset your password
@@ -33,8 +37,8 @@ const ForgotPasswordComponent = () => {
             </Form>
 
             <Row>
-              <Col lg={3}></Col>
-              <Col lg={6}>
+              <Col lg={3} md={3} sm={3} xs={3}></Col>
+              <Col lg={6} md={6} sm={6} xs={6}>
                 <label
                   className="back-to-login"
                   onClick={() => navigate("/login")}
@@ -42,10 +46,10 @@ const ForgotPasswordComponent = () => {
                   Back to Login
                 </label>
               </Col>
-              <Col lg={3}></Col>
+              <Col lg={3} md={3} sm={3} xs={3}></Col>
             </Row>
           </Col>
-          <Col lg={4}></Col>
+          <Col lg={4} md={4} sm={4} xs={4}></Col>
         </Row>
       </Container>
     </Container>

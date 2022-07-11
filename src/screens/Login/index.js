@@ -41,15 +41,15 @@ const Login = (props) => {
   }, [handleCallbackResponse]);
 
   return (
-    <Container fluid className="loginContainer">
+    <Container fluid className="login-container">
       <Row>
-        <Col lg={2}></Col>
-        <Col lg={8} className="login-form-bg">
+        <Col lg={2} md={2} xs={1} sm={2}></Col>
+        <Col lg={8} md={8} xs={10} sm={8} className="login-form-bg">
           <Row style={{ height: "100%" }} className="align-items-center">
-            <Col>
+            <Col xs={12} lg={6} sm={6} md={6}>
               <img width="100%" src={LoginTheme} alt="login" />
             </Col>
-            <Col>
+            <Col xs={12} lg={6} sm={6} md={6}>
               <Form>
                 <h1 className="text-center">Login</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -67,9 +67,9 @@ const Login = (props) => {
                   />
                 </Form.Group>
               </Form>
-              <Col lg={4}></Col>
-              <Col lg={4}></Col>
-              <Col lg={4}>
+              <Col lg={4} md={4} sm={1} ></Col>
+              <Col lg={4} md={4} sm={1} ></Col>
+              <Col lg={4} md={4} sm={10} xs={12} className="responsive-sm">
                 <Form.Text
                   className="forgot-password"
                   onClick={() => navigate("/forgotPassword")}
@@ -83,27 +83,27 @@ const Login = (props) => {
                 </button>
               </div>
               <Row>
-                <Col lg={12}>
+                <Col lg={12} md={12} sm={12}>
                   <h6 className="signup-text">Or Signup using</h6>
                 </Col>
-                <Col lg={3}></Col>
+                <Col lg={3} md={3} sm={3}></Col>
 
-                <Col lg={6} className="social-media-links">
+                <Col lg={6} md={6} className="social-media-links">
                   <button type="submit" className="facebook-btn">
                     <FaFacebookF />
                   </button>
                   <button type="submit" className="twitter-btn">
                     <FiTwitter />
                   </button>
-                  <button type="submit" className="google-btn">
+                  <button type="submit" className="google-btn" id="signInDiv">
                     <AiOutlineGoogle />
                   </button>
                 </Col>
-                <Col lg={3}></Col>
+                <Col lg={3} md={3} sm={3}></Col>
               </Row>
               {/* <div id="signInDiv" /> */}
               <Row>
-                <Col lg={12}>
+                <Col lg={12} md={12} sm={12}>
                   <h6 className="signup-text">
                     Or Don't have an account?{" "}
                     <label onClick={() => navigate("/signup")}>Sign up</label>
@@ -113,7 +113,7 @@ const Login = (props) => {
             </Col>
           </Row>
         </Col>
-        <Col lg={2}></Col>
+        <Col lg={2} md={2} xs={1} sm={2}></Col>
       </Row>
     </Container>
   );

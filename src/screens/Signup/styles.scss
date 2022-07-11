@@ -87,3 +87,25 @@
     margin-top: 30px;
   }
 }
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .signUpContainer {
+    .form-control {
+      margin: 0 8% 0 25px;
+      width: 85%;
+    }
+    .form-label {
+      margin: 0 8% 0 25px;
+    }
+  }
+}
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .signUpContainer {
+    .form-control {
+      margin: 0 8% 0 15px;
+      width: 95%;
+    }
+  }
+}
