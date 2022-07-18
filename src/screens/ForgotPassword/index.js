@@ -1,10 +1,19 @@
 import { Container, Row, Col, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import ForgotPassword from '../../assets/forgot-password-img.png';
+import ForgotPassword from "../../assets/forgot-password-img.png";
 import "./style.scss";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "../../config/firebase";
+import { useState } from "react";
 
 const ForgotPasswordComponent = () => {
-     let navigate = useNavigate();
+  let navigate = useNavigate();
+  const [email, setEmail] = useState("");
+
+  const onForgotPassword = async (e) => {
+    e.preventDefault();
+    await sendPasswordResetEmail(auth, email, "http://localhost:3000/login");
+  };
   return (
     <Container fluid className="forgot-password-container">
       <Container fluid className="divider-1">
@@ -16,8 +25,7 @@ const ForgotPasswordComponent = () => {
       </Container>
       <Container fluid className="divider-2">
         <Row>
-          <Col lg={4} md={4} sm={4} xs={4}></Col>
-          <Col lg={4} md={4} sm={4} xs={4} className="forgotPs-form">
+          <Col lg={4} className="forgotPs-form">
             <img
               src={ForgotPassword}
               alt="forgot password"
@@ -29,8 +37,21 @@ const ForgotPasswordComponent = () => {
             </Form.Text>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Enter email" />
-                <button type="submit" className="submit-btn">
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="submit-btn"
+                  onClick={(e) => {
+                    onForgotPassword(e);
+                  }}
+                >
                   Submit
                 </button>
               </Form.Group>
@@ -49,7 +70,6 @@ const ForgotPasswordComponent = () => {
               <Col lg={3} md={3} sm={3} xs={3}></Col>
             </Row>
           </Col>
-          <Col lg={4} md={4} sm={4} xs={4}></Col>
         </Row>
       </Container>
     </Container>

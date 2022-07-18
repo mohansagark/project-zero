@@ -1,44 +1,39 @@
 import "./styles.scss";
 import { connect } from "react-redux";
 import { Col, Container, Row, Form } from "react-bootstrap";
-import { useCallback, useEffect } from "react";
-import { googleClientId } from "../../config/config";
-import jwtDecode from "jwt-decode";
+import { useState } from "react";
 import { setUserInfo } from "../../store/actions/login.actions";
 import { useNavigate } from "react-router-dom";
 import { FaFacebookF } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { AiOutlineGoogle } from "react-icons/ai";
 import LoginTheme from "../../assets/login-theme1.webp";
+import { toast } from "react-toastify";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebase";
 
 const Login = (props) => {
   let navigate = useNavigate();
-  const { setUserData } = props;
+  const { setUserData, userInfo } = props;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleCallbackResponse = useCallback(
-    (response) => {
-      var userObject = jwtDecode(response.credential);
-      setUserData(userObject);
-      document.getElementById("signInDiv").hidden = true;
-    },
-    [setUserData]
-  );
+  console.log(userInfo,"here");
 
-  useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id: googleClientId,
-      callback: handleCallbackResponse,
-      auto_select: true,
-    });
-
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      theme: "outline",
-      size: "large",
-    });
-
-    // google.accounts.id.prompt();
-  }, [handleCallbackResponse]);
+  const onLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setUserData(user);
+        navigate("/");
+      })
+      .catch((error) => {
+        const errorMessage = error?.message ?? "Something went wrong!!";
+        console.log(error.message, "error");
+        toast.error(errorMessage);
+      });
+  };
 
   return (
     <Container fluid className="login-container">
@@ -57,6 +52,10 @@ const Login = (props) => {
                   <Form.Control
                     type="username"
                     placeholder="Type your username"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                   />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -64,6 +63,10 @@ const Login = (props) => {
                   <Form.Control
                     type="password"
                     placeholder="Type your password"
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
                   />
                 </Form.Group>
               </Form>
@@ -78,7 +81,11 @@ const Login = (props) => {
                 </Form.Text>
               </Col>
               <div className="button-container">
-                <button type="submit" className="login-btn">
+                <button
+                  type="submit"
+                  className="login-btn"
+                  onClick={(e) => onLogin(e)}
+                >
                   Login
                 </button>
               </div>

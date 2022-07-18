@@ -1,5 +1,9 @@
 .signUpContainer {
   overflow: hidden;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
   background-image: linear-gradient(to right top, #fff);
   .back-icon {
     position: absolute;
@@ -9,9 +13,9 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   .login-form-bg {
-    margin: 4% 0;
+    margin: auto;
     padding: 0 2% 2% 0;
-    height: 92%;
+    height: 100%;
     border-radius: 12px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

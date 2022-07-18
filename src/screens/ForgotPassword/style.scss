@@ -1,7 +1,11 @@
 .forgot-password-container {
   overflow: hidden;
+  height: 100vh;
   .divider-1 {
-    height: 220px;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: midnightblue;
     position: relative;
   }
@@ -15,38 +19,35 @@
   .forgotPs-title {
     color: white;
     margin-left: 45px;
-    margin-top: 20px;
   }
   .forgotPs-form {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
       rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
       rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     background-color: white;
-    height: 380px;
-    // width: 340px;
+    width: 25%;
     position: absolute;
-    top: 20%;
-    left: 35%;
+    top: 30vh;
+    left: 38.5%;
+    margin: auto;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
   }
   .forgotPs-desc {
-    display: block;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
     color: black;
     text-align: center;
     margin-bottom: 25px;
-    width: 292px;
-    margin-left: 15px;
   }
   .form-control {
-    width: 80%;
-    margin-left: 32px;
     margin-bottom: 25px;
   }
   .submit-btn {
-    width: 80%;
-    margin-left: 32px;
+    width: 100%;
     background-color: midnightblue;
     color: white;
     height: 30px;
