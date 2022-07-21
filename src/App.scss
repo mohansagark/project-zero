@@ -93,7 +93,7 @@
 }
 
 .fadeOut {
-  animation: 0.001ms fadeOut forwards;
+  animation: 0.001ms shotup forwards;
 }
 
 @keyframes pop {
@@ -126,6 +126,20 @@
   }
   to {
     // transform: translate(-20px, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes shotup {
+  0% {
+    transform: translateY(300%);
+    opacity: 0;
+  }
+  90% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0%);
     opacity: 1;
   }
 }
